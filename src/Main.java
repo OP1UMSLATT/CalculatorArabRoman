@@ -6,12 +6,12 @@ public class Main {
   Scanner in = new Scanner(System.in);
   String str;
     System.out.print("Введите выражение для счета: ");
-  str =in.nextLine(); // считывание строки с клавиатуры.
+  str =in.nextLine();
     System.out.println(calc(str));
 }
   public static  String calc(String input) {
     String srn = " ";
-    String[] expression = input.split(" "); // разбиение строки на символы с помощью пробела.
+    String[] expression = input.split(" ");
     if (isCorrectArab(expression)) {
       return getArabResult(expression);
     } else if (isCorrectRoman(expression)) {
@@ -21,7 +21,6 @@ public class Main {
   }
 
   static boolean isCorrectArab(String[] string) {
-    // проверка строки на наличие ДВУХ арабских цифр.
     String[] arab = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     int count = 0;
 
@@ -48,7 +47,6 @@ public class Main {
   }
 
   static boolean isCorrectRoman(String[] string) {
-    // Проверка строки на наличие ДВУХ римских цифер.
     if (string.length != 3) {
       throw new RuntimeException("throws Exception");
     }
@@ -62,7 +60,6 @@ public class Main {
   }
 
   static int mathAction(int num1, int num2, String[] action) {
-    // математические операции над числами.
     int res;
     String math_action = action[1];
     switch (math_action) {
